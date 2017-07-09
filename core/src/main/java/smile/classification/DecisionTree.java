@@ -117,6 +117,10 @@ public class DecisionTree implements SoftClassifier<double[]>, Serializable {
      * The root of the regression tree
      */
     private Node root;
+
+    public Node getRoot() {
+      return this.root;
+    }
     /**
      * The splitting rule.
      */
@@ -265,12 +269,12 @@ public class DecisionTree implements SoftClassifier<double[]>, Serializable {
     /**
      * Classification tree node.
      */
-    class Node implements Serializable {
+    public class Node implements Serializable {
 
         /**
          * Predicted class label for this node.
          */
-        int output = -1;
+        public int output = -1;
         /**
          * Posteriori probability based on sample ratios in this node.
          */
@@ -278,11 +282,11 @@ public class DecisionTree implements SoftClassifier<double[]>, Serializable {
         /**
          * The split feature for this node.
          */
-        int splitFeature = -1;
+        public int splitFeature = -1;
         /**
          * The split value.
          */
-        double splitValue = Double.NaN;
+        public double splitValue = Double.NaN;
         /**
          * Reduction in splitting criterion.
          */
@@ -290,11 +294,11 @@ public class DecisionTree implements SoftClassifier<double[]>, Serializable {
         /**
          * Children node.
          */
-        Node trueChild = null;
+        public Node trueChild = null;
         /**
          * Children node.
          */
-        Node falseChild = null;
+        public Node falseChild = null;
         /**
          * Predicted output for children node.
          */
